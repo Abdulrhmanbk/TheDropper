@@ -1,8 +1,8 @@
 ﻿/*
     $ TheDropper $
 
-    Author > github.com/L1ghtM4n
-    Donate > 1Lightx1nLy6DfH3W8WD1g4PugRu92M7GV (Bitcoin)
+    ^ Author github.com/L1ghtM4n
+    ^ Donate 1Lightx1nLy6DfH3W8WD1g4PugRu92M7GV (BTC)
 */
 
 using System;
@@ -45,7 +45,7 @@ namespace TheDropper.Generators
                     GenerateInMemory = true,
                     GenerateExecutable = true,
                     CompilerOptions = "/t:winexe",
-                    OutputAssembly = Path.Combine(Directory.GetCurrentDirectory(), $"output.{outExtension}")
+                    OutputAssembly = Path.Combine(Directory.GetCurrentDirectory(), "output." + outExtension)
                 };
                 // Add reference
                 parameters.ReferencedAssemblies.Add("System.dll");
@@ -56,7 +56,7 @@ namespace TheDropper.Generators
                 {
                     foreach (CompilerError error in results.Errors)
                     {
-                        MessageBox.Show(error.ErrorText, $"#{error.ErrorNumber}");
+                        MessageBox.Show(error.ErrorText, error.ErrorNumber);
                     }
                 }
                 return parameters.OutputAssembly;

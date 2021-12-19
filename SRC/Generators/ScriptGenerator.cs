@@ -1,8 +1,8 @@
 ﻿/*
     $ TheDropper $
 
-    Author > github.com/L1ghtM4n
-    Donate > 1Lightx1nLy6DfH3W8WD1g4PugRu92M7GV (Bitcoin)
+    ^ Author github.com/L1ghtM4n
+    ^ Donate 1Lightx1nLy6DfH3W8WD1g4PugRu92M7GV (BTC)
 */
 
 using System;

